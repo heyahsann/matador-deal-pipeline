@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matador Ventures Capital — Deal Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface2: #F0EDE6;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1A1814;
+    --muted: #6B6860;
+    --accent: #1A1814;
+    --accent-light: #F0EDE6;
+    --green: #1D6B4A;
+    --green-bg: #E8F5EE;
+    --amber: #8A5A00;
+    --amber-bg: #FFF3D6;
+    --blue: #1A4FA0;
+    --blue-bg: #E8F0FF;
+    --coral: #9B3522;
+    --coral-bg: #FDEEE9;
+    --purple: #4A3B8C;
+    --purple-bg: #EEEBFF;
+    --teal: #1A6B6B;
+    --teal-bg: #E6F5F5;
+    --gray: #5A5650;
+    --gray-bg: #EDEBE6;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Instrument Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--text);
+    color: #F7F5F0;
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .header-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .header-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,245,240,0.5);
+    margin-bottom: 0.75rem;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #F7F5F0;
+    margin-bottom: 0.75rem;
+  }
+  h1 em { font-style: italic; color: rgba(247,245,240,0.6); }
+  .header-desc {
+    font-size: 14px;
+    color: rgba(247,245,240,0.6);
+    max-width: 540px;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+  .header-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: #F7F5F0;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(247,245,240,0.45);
+  }
+  .header-right {
+    position: absolute;
+    top: 0; right: 0;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(247,245,240,0.3);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .thesis-bar {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .thesis-bar strong {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+  .thesis-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background: var(--bg);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--muted);
+  }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 10px; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+  }
+  input[type="search"] {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    background: var(--surface);
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+  }
+  input[type="search"]:focus { border-color: var(--text); }
+  input[type="search"]::placeholder { color: var(--muted); }
+
+  .filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: var(--text); color: var(--text); }
+  .filter-btn.active { background: var(--text); color: #F7F5F0; border-color: var(--text); }
+
+  .view-toggle {
+    display: flex;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .view-btn {
+    padding: 7px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-family: var(--font-body);
+  }
+  .view-btn.active { background: var(--text); color: #F7F5F0; }
+  .view-btn svg { width: 14px; height: 14px; }
+
+  .results-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  .deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .deal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.3s ease both;
+  }
+  .deal-card:hover {
+    border-color: var(--border2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .company-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .conviction-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .dot-high { background: #1D6B4A; }
+  .dot-medium { background: #8A5A00; }
+  .dot-watch { background: #9B3522; }
+
+  .tagline {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+  }
+
+  .card-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .meta-val { font-size: 12px; color: var(--text); }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .status-pill {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.03em;
+  }
+  .card-links { display: flex; gap: 6px; }
+  .card-link {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    color: var(--muted);
+    transition: all 0.15s;
+    font-size: 13px;
+  }
+  .card-link:hover { border-color: var(--text); color: var(--text); background: var(--accent-light); }
+  .card-link svg { width: 13px; height: 13px; }
+
+  .traction-box {
+    background: var(--bg);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .kanban-board {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  .kanban-col {
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+  .kanban-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  .kanban-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .kanban-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background: var(--surface2);
+    color: var(--muted);
+    padding: 1px 7px;
+    border-radius: 20px;
+  }
+  .kanban-cards { display: flex; flex-direction: column; gap: 8px; }
+  .kanban-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    animation: fadeIn 0.3s ease both;
+  }
+  .kanban-card:hover { border-color: var(--border2); }
+  .kanban-company {
+    font-family: var(--font-display);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .kanban-tagline { font-size: 11px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+  .kanban-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .kanban-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kanban-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; }
+  thead { background: var(--surface2); }
+  th {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 10px 14px;
+    text-align: left;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  td {
+    padding: 12px 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  tr:hover td { background: var(--bg); }
+  .td-company { font-family: var(--font-display); font-size: 15px; }
+  .td-location { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .td-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .s-tracking { background: var(--gray-bg); color: var(--gray); }
+  .s-intro { background: var(--purple-bg); color: var(--purple); }
+  .s-meeting { background: var(--blue-bg); color: var(--blue); }
+  .s-diligence { background: var(--amber-bg); color: var(--amber); }
+  .s-term { background: var(--coral-bg); color: var(--coral); }
+  .s-invested { background: var(--green-bg); color: var(--green); }
+  .s-passed { background: #FFF0F0; color: #8B2020; }
+
+  .cat-ai-agents { background: var(--purple-bg); color: var(--purple); }
+  .cat-dev-tools { background: var(--blue-bg); color: var(--blue); }
+  .cat-vertical-saas { background: #E2F4EE; color: #1A5E42; }
+  .cat-customer-success { background: var(--green-bg); color: var(--green); }
+  .cat-engineering-ops { background: var(--amber-bg); color: var(--amber); }
+  .cat-product-ops { background: #EEF2FF; color: #3730A3; }
+  .cat-e-commerce { background: var(--coral-bg); color: var(--coral); }
+  .cat-inventory-ops { background: #FFF7ED; color: #9A4F00; }
+  .cat-collab { background: #F3F0FF; color: #5B3DB0; }
+  .cat-default { background: var(--gray-bg); color: var(--gray); }
+
+  .empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .empty-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.3; }
+
+  footer {
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    padding: 1.5rem 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-left {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer-links { display: flex; gap: 12px; }
+  .footer-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.15s;
+  }
+  .footer-link:hover { color: var(--text); border-color: var(--text); }
+
+  @media (max-width: 600px) {
+    header { padding: 2rem 1.25rem 1.5rem; }
+    main { padding: 1.25rem; }
+    .header-right { display: none; }
+    .deals-grid { grid-template-columns: 1fr; }
+    .thesis-bar { padding: 0.75rem 1.25rem; }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,24,20,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeInOverlay 0.2s ease;
+  }
+  @keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .modal {
+    background: var(--surface);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.25s ease;
+    position: relative;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .modal-company {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .modal-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 480px;
+  }
+  .modal-close {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    flex-shrink: 0;
+    font-size: 18px;
+    transition: all 0.15s;
+  }
+  .modal-close:hover { background: var(--bg); color: var(--text); }
+  .modal-body { padding: 1.25rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .modal-section-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .modal-field {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 9px 11px;
+  }
+  .modal-field-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .modal-field-val {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .modal-field.full { grid-column: 1 / -1; }
+  .modal-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .modal-next {
+    background: var(--text);
+    color: #F7F5F0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .modal-next .modal-field-label { color: rgba(247,245,240,0.5); }
+  .modal-next .modal-field-val { color: #F7F5F0; }
+  .modal-links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .modal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .modal-link:hover { background: var(--bg); }
+  .deal-card { cursor: pointer; }
+  .deal-card:hover .company-name { text-decoration: underline; text-underline-offset: 3px; }
+  .kanban-card { cursor: pointer; }
+
+  .gi-box {
+    background: var(--green-bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--green);
+  }
+  .gi-box .gi-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--green);
+    opacity: 0.6;
+    margin-bottom: 4px;
+  }
+  .gi-box .gi-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    padding: 1px 0;
+  }
+  .gi-box .gi-row .gi-key { opacity: 0.7; }
+  .why-box {
+    background: var(--purple-bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--purple);
+  }
+  .why-box .why-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--purple);
+    opacity: 0.6;
+    margin-bottom: 2px;
+  }
+  .metrics-box {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .metrics-box .metrics-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .metrics-box .metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .metrics-box .metrics-row .m-item {
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+  }
+  .metrics-box .metrics-row .m-item .m-key { color: var(--muted); }
+  .metrics-box .metrics-row .m-item .m-val { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-right" id="lastUpdated"></div>
+    <p class="header-eyebrow">Built for Mohammed Al-Abdullah · Founder & GP, Matador Ventures Capital</p>
+    <h1>Matador Ventures Capital<br><em>Deal Pipeline</em></h1>
+    <p class="header-desc">Autonomous deal sourcing pipeline scanning for pre-seed & seed AI-native companies — surfacing category-defining founders building with LLMs as core product.</p>
+    <div class="header-stats" id="headerStats"></div>
+  </div>
+</header>
+
+<div class="thesis-bar">
+  <strong>Investment Thesis</strong>
+  <span class="thesis-tag">Pre-seed / Seed</span>
+  <span class="thesis-tag">AI-native SaaS</span>
+  <span class="thesis-tag">Vertical AI Agents</span>
+  <span class="thesis-tag">SF / NYC / Austin / LA / Seattle</span>
+  <span class="thesis-tag">Team &lt; 20</span>
+</div>
+
+<main>
+  <div class="controls">
+    <div class="search-wrap">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
+      <input type="search" id="searchInput" placeholder="Search companies, founders, categories…">
+    </div>
+
+    <div class="filter-group" id="statusFilters"></div>
+    <div class="filter-group" id="convictionFilters"></div>
+
+    <div class="view-toggle">
+      <button class="view-btn active" id="btnGrid" onclick="setView('grid')" title="Grid">
+        <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+        Grid
+      </button>
+      <button class="view-btn" id="btnKanban" onclick="setView('kanban')" title="Kanban">
+        <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="4" height="14" rx="1"/><rect x="6" y="1" width="4" height="10" rx="1"/><rect x="11" y="1" width="4" height="12" rx="1"/></svg>
+        Board
+      </button>
+      <button class="view-btn" id="btnTable" onclick="setView('table')" title="Table">
+        <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="14" height="3" rx="1"/><rect x="1" y="6" width="14" height="2" rx="1"/><rect x="1" y="10" width="14" height="2" rx="1"/><rect x="1" y="14" width="14" height="1" rx="1"/></svg>
+        Table
+      </button>
+    </div>
+  </div>
+
+  <div class="results-bar">
+    <span id="resultsCount"></span>
+    <span id="lastUpdatedSmall"></span>
+  </div>
+
+  <div id="viewContainer"></div>
+</main>
+
+<footer>
+  <div class="footer-left">
+    Built by Ahsan Habib for <strong>Matador Ventures Capital</strong> (Mohammed Al-Abdullah, Founder & GP)<br>
+    Sourcing AI-native pre-seed & seed deals · US tech hub ecosystem focus
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/mohammed-al-abdullah-151685218/" class="footer-link" target="_blank">Mohammed Al-Abdullah</a>
+    <a href="https://www.linkedin.com/in/ahsan-habib-imrose-1b8724110" class="footer-link" target="_blank">Ahsan Habib</a>
+    <a href="https://github.com/heyahsann" class="footer-link" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<div id="modalOverlay" class="modal-overlay" style="display:none" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <div>
+        <div class="modal-company" id="mCompany"></div>
+        <div class="modal-tagline" id="mTagline"></div>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+let deals = [];
+let currentView = 'grid';
+let activeStatus = 'all';
+let activeConviction = 'all';
+let searchQuery = '';
+
+const STATUSES = ['Tracking','Intro Made','First Meeting','Diligence','Term Sheet','Invested','Passed'];
+const STATUS_CLASS = {
+  'Tracking': 's-tracking',
+  'Intro Made': 's-intro',
+  'First Meeting': 's-meeting',
+  'Diligence': 's-diligence',
+  'Term Sheet': 's-term',
+  'Invested': 's-invested',
+  'Passed': 's-passed'
+};
+const CAT_CLASS = {
+  'AI Agents': 'cat-ai-agents',
+  'Dev Tools': 'cat-dev-tools',
+  'Vertical SaaS': 'cat-vertical-saas',
+  'Customer Success': 'cat-customer-success',
+  'Engineering Ops': 'cat-engineering-ops',
+  'Product Ops': 'cat-product-ops',
+  'E-commerce': 'cat-e-commerce',
+  'Inventory Ops': 'cat-inventory-ops',
+  'Collab Infrastructure': 'cat-collab'
+};
+
+function esc(s) { return String(s || '').replace(/[&<>"']/g, function(m) {
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]; });
+}
+
+function openModal(id) {
+  const d = deals.find(x => x.id === id);
+  if (!d) return;
+  document.getElementById('mCompany').textContent = d.company;
+  document.getElementById('mTagline').textContent = d.tagline;
+
+  const founders = d.founders.map(f => esc(f.name) + ' · ' + esc(f.role)).join('<br>');
+  const gi = d.generalInfo || {};
+  const metrics = d.metrics || {};
+
+  let generalInfoHtml = '';
+  const giItems = [];
+  if (gi.isRaising) giItems.push('<div class="gi-row"><span class="gi-key">Raising</span><span>' + esc(gi.isRaising) + '</span></div>');
+  if (gi.raiseAmount) giItems.push('<div class="gi-row"><span class="gi-key">Amount</span><span>' + esc(gi.raiseAmount) + '</span></div>');
+  if (gi.raiseDetails) giItems.push('<div class="gi-row"><span class="gi-key">Details</span><span>' + esc(gi.raiseDetails) + '</span></div>');
+  if (gi.previousInvestors && gi.previousInvestors.length) giItems.push('<div class="gi-row"><span class="gi-key">Investors</span><span>' + esc(gi.previousInvestors.join(', ')) + '</span></div>');
+  if (giItems.length) {
+    generalInfoHtml = '<div class="gi-box"><div class="gi-label">General Information</div>' + giItems.join('') + '</div>';
+  }
+
+  let metricsHtml = '';
+  const mItems = [];
+  if (metrics.traction) mItems.push('<span class="m-item"><span class="m-key">traction </span><span class="m-val">' + esc(metrics.traction) + '</span></span>');
+  if (metrics.revenue) mItems.push('<span class="m-item"><span class="m-key">revenue </span><span class="m-val">' + esc(metrics.revenue) + '</span></span>');
+  if (metrics.lois) mItems.push('<span class="m-item"><span class="m-key">LOIs </span><span class="m-val">' + esc(metrics.lois) + '</span></span>');
+  if (metrics.userGrowth) mItems.push('<span class="m-item"><span class="m-key">growth </span><span class="m-val">' + esc(metrics.userGrowth) + '</span></span>');
+  if (metrics.healthIndicators) mItems.push('<span class="m-item"><span class="m-key">health </span><span class="m-val">' + esc(metrics.healthIndicators) + '</span></span>');
+  if (mItems.length) {
+    metricsHtml = '<div class="metrics-box"><div class="metrics-label">Metrics</div><div class="metrics-row">' + mItems.join('') + '</div></div>';
+  }
+
+  let whyHtml = '';
+  if (d.whyInvest) {
+    whyHtml = '<div class="why-box"><div class="why-label">Why Invest</div>' + esc(d.whyInvest) + '</div>';
+  }
+
+  document.getElementById('modalBody').innerHTML = `
+    ${d.description ? `<div class="modal-desc">${esc(d.description)}</div>` : ''}
+
+    <div class="modal-section">
+      <div class="modal-section-label">Deal details</div>
+      <div class="modal-grid">
+        <div class="modal-field"><div class="modal-field-label">Stage</div><div class="modal-field-val">${esc(d.stage)}</div></div>
+        <div class="modal-field"><div class="modal-field-label">Status</div><div class="modal-field-val">${statusEl(d.status)}</div></div>
+        <div class="modal-field"><div class="modal-field-label">Conviction</div><div class="modal-field-val">${esc(d.conviction)}</div></div>
+        <div class="modal-field"><div class="modal-field-label">Location</div><div class="modal-field-val">${esc(d.location) || '—'}</div></div>
+        <div class="modal-field full"><div class="modal-field-label">Founder(s)</div><div class="modal-field-val">${founders}</div></div>
+        ${d.accelerator ? `<div class="modal-field"><div class="modal-field-label">Accelerator</div><div class="modal-field-val">${esc(d.accelerator)}</div></div>` : ''}
+        <div class="modal-field"><div class="modal-field-label">Source</div><div class="modal-field-val">${esc(d.source)}</div></div>
+        <div class="modal-field"><div class="modal-field-label">First contact</div><div class="modal-field-val">${esc(d.firstContact) || '—'}</div></div>
+      </div>
+    </div>
+
+    ${generalInfoHtml}
+
+    ${metricsHtml}
+
+    ${whyHtml}
+
+    ${d.nextAction || d.currentStatus ? `
+    <div class="modal-next">
+      ${d.currentStatus ? `<div class="modal-field-label">Current status</div><div class="modal-field-val" style="margin-bottom:${d.nextAction?'10px':'0'}">${esc(d.currentStatus)}</div>` : ''}
+      ${d.nextAction ? `<div class="modal-field-label">Next action</div><div class="modal-field-val">→ ${esc(d.nextAction)}</div>` : ''}
+    </div>` : ''}
+
+    ${d.watchouts ? `<div class="modal-desc" style="background:var(--coral-bg);color:var(--coral);margin-top:0">${esc(d.watchouts)}</div>` : ''}
+
+    <div>
+      <div class="modal-section-label" style="margin-bottom:6px">Links</div>
+      <div class="modal-links">
+        ${d.website ? `<a href="${esc(d.website)}" target="_blank" class="modal-link">${globeIcon} Website</a>` : ''}
+        ${d.linkedin ? `<a href="${esc(d.linkedin)}" target="_blank" class="modal-link">${liIcon} LinkedIn</a>` : ''}
+        ${d.email ? `<a href="mailto:${esc(d.email)}" class="modal-link">${mailIcon} ${esc(d.email)}</a>` : ''}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('modalOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+
+function closeModalDirect() {
+  document.getElementById('modalOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+
+async function init() {
+  try {
+    const res = await fetch('./data/deals.json');
+    deals = await res.json();
+  } catch(e) {
+    deals = window.__DEALS__ || [];
+  }
+  renderStats();
+  renderFilters();
+  render();
+  updateTimestamp();
+}
+
+function renderStats() {
+  const stats = [
+    { num: deals.length, label: 'Companies tracked' },
+    { num: deals.filter(d => d.conviction === 'High').length, label: 'High conviction' },
+    { num: [...new Set(deals.flatMap(d => d.category))].length, label: 'Categories' },
+    { num: deals.filter(d => d.status === 'Invested').length, label: 'Invested' }
+  ];
+  document.getElementById('headerStats').innerHTML = stats.map(s => `
+    <div class="stat">
+      <div class="stat-num">${s.num}</div>
+      <div class="stat-label">${s.label}</div>
+    </div>
+  `).join('');
+}
+
+function renderFilters() {
+  const statuses = ['all', ...STATUSES.filter(s => deals.some(d => d.status === s))];
+  document.getElementById('statusFilters').innerHTML = statuses.map(s => `
+    <button class="filter-btn ${activeStatus === s ? 'active' : ''}" onclick="setStatus('${s}')">${s === 'all' ? 'All stages' : s}</button>
+  `).join('');
+
+  const convictions = ['all','High','Medium','Watch'];
+  document.getElementById('convictionFilters').innerHTML = convictions.map(c => `
+    <button class="filter-btn ${activeConviction === c ? 'active' : ''}" onclick="setConviction('${c}')">${c === 'all' ? 'All conviction' : c}</button>
+  `).join('');
+}
+
+function filtered() {
+  return deals.filter(d => {
+    const q = searchQuery.toLowerCase();
+    const matchSearch = !q || d.company.toLowerCase().includes(q)
+      || d.tagline.toLowerCase().includes(q)
+      || d.category.some(c => c.toLowerCase().includes(q))
+      || d.founders.some(f => f.name.toLowerCase().includes(q))
+      || (d.location || '').toLowerCase().includes(q);
+    const matchStatus = activeStatus === 'all' || d.status === activeStatus;
+    const matchConv = activeConviction === 'all' || d.conviction === activeConviction;
+    return matchSearch && matchStatus && matchConv;
+  });
+}
+
+function tagEl(cat) {
+  const cls = CAT_CLASS[cat] || 'cat-default';
+  return `<span class="tag ${cls}">${cat}</span>`;
+}
+
+function statusEl(status) {
+  return `<span class="status-pill ${STATUS_CLASS[status] || 's-tracking'}">${status}</span>`;
+}
+
+function convDot(conviction) {
+  const cls = conviction === 'High' ? 'dot-high' : conviction === 'Medium' ? 'dot-medium' : 'dot-watch';
+  return `<div class="conviction-dot ${cls}" title="${conviction} conviction"></div>`;
+}
+
+function linkIcon(url, icon) {
+  if (!url) return '';
+  return `<a href="${url}" target="_blank" rel="noopener" class="card-link" title="Visit">${icon}</a>`;
+}
+
+const globeIcon = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5C8 1.5 5.5 4 5.5 8s2.5 6.5 2.5 6.5M8 1.5C8 1.5 10.5 4 10.5 8S8 14.5 8 14.5M1.5 8h13"/></svg>`;
+const liIcon = `<svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-1 4.5h2V14h-2V6.5zm4 0h2v1h.03c.28-.53 1-1.09 2.07-1.09 2.2 0 2.6 1.45 2.6 3.34V14h-2v-3.75c0-.89-.02-2.04-1.24-2.04-1.25 0-1.44.97-1.44 1.97V14h-2V6.5z"/></svg>`;
+const mailIcon = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg>`;
+
+function renderGrid(list) {
+  if (!list.length) return emptyState();
+  return `<div class="deals-grid">${list.map((d,i) => `
+    <div class="deal-card" style="animation-delay:${i*0.04}s" onclick="openModal('${d.id}')" title="Click to view details">
+      <div class="card-top">
+        <div class="company-name">${esc(d.company)}</div>
+        ${convDot(d.conviction)}
+      </div>
+      <p class="tagline">${esc(d.tagline)}</p>
+      <div class="card-tags">${d.category.map(tagEl).join('')}</div>
+      ${d.metrics && d.metrics.traction ? `<div class="traction-box">${esc(d.metrics.traction)}</div>` : ''}
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="meta-label">Stage</div>
+          <div class="meta-val">${esc(d.stage)}</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Location</div>
+          <div class="meta-val">${esc(d.location) || '—'}</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Founder(s)</div>
+          <div class="meta-val">${d.founders.map(f=>esc(f.name)).join(', ')}</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Source</div>
+          <div class="meta-val">${esc(d.source)}</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        ${statusEl(d.status)}
+        <div class="card-links">
+          ${linkIcon(d.website, globeIcon)}
+          ${linkIcon(d.linkedin, liIcon)}
+          ${d.email ? `<a href="mailto:${d.email}" class="card-link" title="Email">${mailIcon}</a>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('')}</div>`;
+}
+
+function renderKanban(list) {
+  const cols = STATUSES.filter(s => deals.some(d => d.status === s));
+  if (!cols.length) return emptyState();
+  return `<div class="kanban-board">${cols.map(col => {
+    const cards = list.filter(d => d.status === col);
+    return `<div class="kanban-col">
+      <div class="kanban-header">
+        <span class="kanban-label">${col}</span>
+        <span class="kanban-count">${cards.length}</span>
+      </div>
+      <div class="kanban-cards">
+        ${cards.length ? cards.map((d,i) => `
+          <div class="kanban-card" style="animation-delay:${i*0.05}s" onclick="openModal('${d.id}')" title="Click to view details">
+            <div class="kanban-company">${esc(d.company)}</div>
+            <div class="kanban-tagline">${esc(d.tagline)}</div>
+            <div class="kanban-tags">${d.category.slice(0,2).map(tagEl).join('')}</div>
+            <div class="kanban-meta">
+              <div class="kanban-dot ${d.conviction==='High'?'dot-high':d.conviction==='Medium'?'dot-medium':'dot-watch'}"></div>
+              ${esc(d.conviction)} · ${esc(d.stage)}
+            </div>
+          </div>
+        `).join('') : `<div style="padding:1rem;font-size:11px;color:var(--muted);text-align:center;font-family:var(--font-mono)">empty</div>`}
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderTable(list) {
+  if (!list.length) return emptyState();
+  return `<div class="table-wrap"><table>
+    <thead><tr>
+      <th>Company</th><th>Stage</th><th>Status</th><th>Conviction</th>
+      <th>Category</th><th>Location</th><th>Founder(s)</th><th>Links</th>
+    </tr></thead>
+    <tbody>${list.map(d => `<tr onclick="openModal('${d.id}')" style="cursor:pointer" title="Click to view details">
+      <td class="td-company">${esc(d.company)}<br><span style="font-size:11px;color:var(--muted);font-family:var(--font-body);font-weight:400">${esc(d.tagline.substring(0,48))}…</span></td>
+      <td style="font-size:12px;font-family:var(--font-mono);color:var(--muted)">${esc(d.stage)}</td>
+      <td>${statusEl(d.status)}</td>
+      <td><span class="tag ${d.conviction==='High'?'cat-customer-success':d.conviction==='Medium'?'cat-engineering-ops':'cat-default'}">${esc(d.conviction)}</span></td>
+      <td class="td-tags">${d.category.slice(0,2).map(tagEl).join('')}</td>
+      <td class="td-location">${esc(d.location)||'—'}</td>
+      <td style="font-size:12px">${d.founders.map(f=>esc(f.name)).join(', ')}</td>
+      <td><div style="display:flex;gap:5px">
+        ${linkIcon(d.website, globeIcon)}
+        ${linkIcon(d.linkedin, liIcon)}
+        ${d.email ? `<a href="mailto:${d.email}" class="card-link">${mailIcon}</a>` : ''}
+      </div></td>
+    </tr>`).join('')}</tbody>
+  </table></div>`;
+}
+
+function emptyState() {
+  return `<div class="empty"><div class="empty-icon">○</div>No deals match your filters.</div>`;
+}
+
+function render() {
+  const list = filtered();
+  document.getElementById('resultsCount').textContent = `${list.length} of ${deals.length} companies`;
+  const container = document.getElementById('viewContainer');
+  if (currentView === 'grid') container.innerHTML = renderGrid(list);
+  else if (currentView === 'kanban') container.innerHTML = renderKanban(list);
+  else container.innerHTML = renderTable(list);
+}
+
+function setView(v) {
+  currentView = v;
+  ['grid','kanban','table'].forEach(x => {
+    document.getElementById(`btn${x.charAt(0).toUpperCase()+x.slice(1)}`).classList.toggle('active', x===v);
+  });
+  render();
+}
+
+function setStatus(s) {
+  activeStatus = s;
+  renderFilters();
+  render();
+}
+
+function setConviction(c) {
+  activeConviction = c;
+  renderFilters();
+  render();
+}
+
+function updateTimestamp() {
+  const now = new Date();
+  const str = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  document.getElementById('lastUpdated').innerHTML = `Last updated<br>${str}`;
+  document.getElementById('lastUpdatedSmall').textContent = `Updated ${str}`;
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  render();
+});
+
+init();
+</script>
+</body>
+</html>
