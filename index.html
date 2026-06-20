@@ -4,518 +4,405 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Matador Ventures Capital — Deal Pipeline</title>
+<meta name="description" content="Deal pipeline for Matador Ventures Capital. Curated by Ahsan Habib for Mohammed Al-Abdullah, Founder & GP.">
+<link rel="icon" type="image/png" href="https://matador-vc.com/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #F7F5F0;
-    --surface: #FFFFFF;
-    --surface2: #F0EDE6;
-    --border: rgba(0,0,0,0.08);
-    --border2: rgba(0,0,0,0.14);
-    --text: #1A1814;
-    --muted: #6B6860;
-    --accent: #1A1814;
-    --accent-light: #F0EDE6;
-    --green: #1D6B4A;
-    --green-bg: #E8F5EE;
-    --amber: #8A5A00;
-    --amber-bg: #FFF3D6;
-    --blue: #1A4FA0;
-    --blue-bg: #E8F0FF;
-    --coral: #9B3522;
-    --coral-bg: #FDEEE9;
-    --purple: #4A3B8C;
-    --purple-bg: #EEEBFF;
-    --teal: #1A6B6B;
-    --teal-bg: #E6F5F5;
-    --gray: #5A5650;
-    --gray-bg: #EDEBE6;
-    --font-display: 'DM Serif Display', Georgia, serif;
-    --font-body: 'Instrument Sans', sans-serif;
-    --font-mono: 'DM Mono', monospace;
+    --green: #15543f;
+    --green-d: #0d3a2b;
+    --gold: #b5904f;
+    --gold-soft: #c9a86a;
+    --ink: #1a1714;
+    --ink-soft: #54504a;
+    --paper: #faf8f3;
+    --paper-2: #f1ece2;
+    --line: #e3dccf;
+    --white: #ffffff;
+    --max: 1180px;
+
+    /* status colors — reusing the green/gold/ink palette */
+    --s-tracking-bg: #ede9e2;
+    --s-tracking: #54504a;
+    --s-intro-bg: #eee9fa;
+    --s-intro: #3b2f6b;
+    --s-meeting-bg: #deecf8;
+    --s-meeting: #1a4f7a;
+    --s-diligence-bg: #f6ebd4;
+    --s-diligence: #7a5800;
+    --s-term-bg: #f8e0d4;
+    --s-term: #7a3420;
+    --s-invested-bg: #def0e6;
+    --s-invested: #15543f;
+    --s-passed-bg: #f5e0e0;
+    --s-passed: #7a2222;
   }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
   body {
-    font-family: var(--font-body);
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    font-size: 14px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
 
+  h1, h2, h3, .h-like {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: 0;
+  }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+  /* ── HEADER (sticky nav) ───────────────────────────────────────────── */
   header {
-    background: var(--text);
-    color: #F7F5F0;
-    padding: 3rem 2rem 2.5rem;
-    position: relative;
-    overflow: hidden;
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,248,243,0.85);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
   }
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px; max-width: var(--max); margin: 0 auto; padding: 0 32px;
   }
-  .header-inner { max-width: 1100px; margin: 0 auto; position: relative; }
-  .header-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(247,245,240,0.5);
-    margin-bottom: 0.75rem;
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: inherit;
   }
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.15;
-    color: #F7F5F0;
-    margin-bottom: 0.75rem;
+  .brand .logo-mark {
+    width: 38px; height: auto;
   }
-  h1 em { font-style: italic; color: rgba(247,245,240,0.6); }
-  .header-desc {
-    font-size: 14px;
-    color: rgba(247,245,240,0.6);
-    max-width: 540px;
-    margin-bottom: 2rem;
-    line-height: 1.65;
+  .brand .word { display: flex; flex-direction: column; line-height: 1; }
+  .brand .word .t1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-size: 20px; letter-spacing: 0.06em; color: var(--ink);
   }
-  .header-stats {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+  .brand .word .t2 {
+    font-size: 9.5px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--green); margin-top: 3px; font-weight: 600;
   }
+  .header-credit {
+    font-size: 12px; color: var(--ink-soft); font-weight: 500;
+    margin-left: auto; padding: 8px 0;
+  }
+  .header-credit a { color: var(--green); text-decoration: none; font-weight: 600; }
+  .header-credit a:hover { color: var(--gold); }
+
+  /* ── HERO SECTION ──────────────────────────────────────────────────── */
+  .pipeline-hero {
+    padding: 100px 0 80px;
+  }
+  .pipeline-hero .eyebrow {
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 16px;
+  }
+  .pipeline-hero h1 {
+    font-size: clamp(38px, 5.5vw, 68px);
+    color: var(--ink);
+    max-width: 18ch;
+  }
+  .pipeline-hero h1 em { font-style: italic; color: var(--green); }
+  .pipeline-hero .lede {
+    font-size: clamp(16px, 1.8vw, 19px);
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-top: 24px;
+  }
+
+  /* ── STATS BAR ─────────────────────────────────────────────────────── */
+  .stats-bar {
+    margin-top: 60px;
+    display: flex; gap: 48px; flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+  }
+  .stat-item { display: flex; flex-direction: column; }
   .stat-num {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    color: #F7F5F0;
-    line-height: 1;
-    margin-bottom: 2px;
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: 38px; color: var(--green); line-height: 1;
   }
   .stat-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(247,245,240,0.45);
-  }
-  .header-right {
-    position: absolute;
-    top: 0; right: 0;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: rgba(247,245,240,0.3);
-    text-align: right;
-    line-height: 1.8;
+    font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft);
+    text-transform: uppercase; margin-top: 6px;
   }
 
+  /* ── THESIS BAR ────────────────────────────────────────────────────── */
   .thesis-bar {
-    background: var(--surface2);
-    border-bottom: 1px solid var(--border);
-    padding: 0.75rem 2rem;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 12px;
-    color: var(--muted);
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+  }
+  .thesis-bar .wrap {
+    display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
   }
   .thesis-bar strong {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text);
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--green); font-weight: 600;
   }
   .thesis-tag {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    background: var(--bg);
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: var(--muted);
+    font-size: 12px; color: var(--ink-soft); background: var(--white);
+    padding: 4px 14px; border-radius: 100px; border: 1px solid var(--line);
   }
 
-  main { max-width: 1100px; margin: 0 auto; padding: 2rem; }
-
+  /* ── CONTROLS ──────────────────────────────────────────────────────── */
   .controls {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    padding: 28px 0 20px;
   }
   .search-wrap {
-    position: relative;
-    flex: 1;
-    min-width: 200px;
+    position: relative; flex: 1; min-width: 200px;
   }
   .search-wrap svg {
-    position: absolute;
-    left: 10px; top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.4;
+    position: absolute; left: 12px; top: 50%;
+    transform: translateY(-50%); opacity: 0.35; pointer-events: none;
   }
   input[type="search"] {
-    width: 100%;
-    padding: 8px 12px 8px 34px;
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    background: var(--surface);
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--text);
-    outline: none;
+    width: 100%; padding: 10px 14px 10px 38px;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 14px;
+    color: var(--ink); outline: none; transition: border-color .2s;
   }
-  input[type="search"]:focus { border-color: var(--text); }
-  input[type="search"]::placeholder { color: var(--muted); }
+  input[type="search"]:focus { border-color: var(--green); }
+  input[type="search"]::placeholder { color: var(--ink-soft); }
 
-  .filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
   .filter-btn {
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border2);
-    background: var(--surface);
-    font-family: var(--font-body);
-    font-size: 12px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
+    padding: 7px 14px; border-radius: 4px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 500;
+    color: var(--ink-soft); cursor: pointer;
+    transition: all .15s; white-space: nowrap;
   }
-  .filter-btn:hover { border-color: var(--text); color: var(--text); }
-  .filter-btn.active { background: var(--text); color: #F7F5F0; border-color: var(--text); }
+  .filter-btn:hover { border-color: var(--green); color: var(--green); }
+  .filter-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
 
   .view-toggle {
-    display: flex;
-    border: 1px solid var(--border2);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--surface);
+    display: flex; border: 1px solid var(--line);
+    border-radius: 4px; overflow: hidden; background: var(--white);
   }
   .view-btn {
-    padding: 7px 12px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: var(--muted);
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    font-family: var(--font-body);
+    padding: 7px 12px; border: none; background: transparent;
+    cursor: pointer; color: var(--ink-soft);
+    transition: all .15s; display: flex; align-items: center; gap: 5px;
+    font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 500;
   }
-  .view-btn.active { background: var(--text); color: #F7F5F0; }
+  .view-btn.active { background: var(--green); color: var(--white); }
   .view-btn svg { width: 14px; height: 14px; }
+  .view-btn + .view-btn { border-left: 1px solid var(--line); }
 
   .results-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--font-mono);
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px; font-size: 13px; color: var(--ink-soft);
+    padding-bottom: 12px; border-bottom: 1px solid var(--line);
   }
 
+  /* ── GRID VIEW ─────────────────────────────────────────────────────── */
   .deals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
   }
-
   .deal-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.25rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    animation: fadeIn 0.3s ease both;
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 10px; padding: 28px 26px;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    cursor: pointer; display: flex; flex-direction: column; gap: 14px;
+    animation: fadeIn .3s ease both;
   }
   .deal-card:hover {
-    border-color: var(--border2);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border-color: var(--green);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 44px -26px rgba(13,58,43,0.35);
   }
-
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
   .company-name {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--green); line-height: 1.15;
   }
   .conviction-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 5px;
   }
-  .dot-high { background: #1D6B4A; }
-  .dot-medium { background: #8A5A00; }
+  .dot-high { background: var(--green); }
+  .dot-medium { background: var(--gold); }
   .dot-watch { background: #9B3522; }
 
   .tagline {
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.55;
+    font-size: 13px; color: var(--ink-soft); line-height: 1.55;
   }
 
-  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 20px;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    letter-spacing: 0.02em;
+    font-size: 11px; padding: 3px 10px; border-radius: 4px;
+    font-weight: 500; letter-spacing: 0.02em;
+  }
+
+  .traction-box {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 6px; padding: 10px 12px;
+    font-size: 12.5px; color: var(--ink-soft); line-height: 1.55;
   }
 
   .card-meta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    padding-top: 12px; border-top: 1px solid var(--line);
   }
   .meta-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 2px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 500; margin-bottom: 2px;
   }
-  .meta-val { font-size: 12px; color: var(--text); }
+  .meta-val { font-size: 13px; color: var(--ink); }
 
   .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 12px; border-top: 1px solid var(--line);
   }
   .status-pill {
-    font-size: 10px;
-    padding: 3px 9px;
-    border-radius: 20px;
-    font-weight: 500;
-    font-family: var(--font-mono);
-    letter-spacing: 0.03em;
+    font-size: 11px; padding: 3px 10px; border-radius: 4px;
+    font-weight: 500; letter-spacing: 0.03em;
   }
   .card-links { display: flex; gap: 6px; }
   .card-link {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    border: 1px solid var(--border2);
+    width: 32px; height: 32px; border-radius: 4px;
+    border: 1px solid var(--line); background: var(--white);
     display: flex; align-items: center; justify-content: center;
-    text-decoration: none;
-    color: var(--muted);
-    transition: all 0.15s;
-    font-size: 13px;
+    text-decoration: none; color: var(--ink-soft);
+    transition: all .15s; font-size: 14px;
   }
-  .card-link:hover { border-color: var(--text); color: var(--text); background: var(--accent-light); }
-  .card-link svg { width: 13px; height: 13px; }
+  .card-link:hover { border-color: var(--green); color: var(--green); background: #def0e6; }
+  .card-link svg { width: 14px; height: 14px; }
 
-  .traction-box {
-    background: var(--bg);
-    border-radius: 6px;
-    padding: 8px 10px;
-    font-size: 11.5px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
+  /* ── KANBAN VIEW ──────────────────────────────────────────────────── */
   .kanban-board {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
+    display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px;
   }
-  .kanban-col {
-    min-width: 260px;
-    flex-shrink: 0;
-  }
+  .kanban-col { min-width: 260px; flex-shrink: 0; }
   .kanban-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 0 4px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px; padding: 0 4px;
   }
   .kanban-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    font-weight: 500;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green); font-weight: 600;
   }
   .kanban-count {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    background: var(--surface2);
-    color: var(--muted);
-    padding: 1px 7px;
-    border-radius: 20px;
+    font-size: 11px; background: var(--paper-2); color: var(--ink-soft);
+    padding: 1px 8px; border-radius: 4px; font-weight: 500;
   }
-  .kanban-cards { display: flex; flex-direction: column; gap: 8px; }
+  .kanban-cards { display: flex; flex-direction: column; gap: 10px; }
   .kanban-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px;
-    animation: fadeIn 0.3s ease both;
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 10px; padding: 16px;
+    animation: fadeIn .3s ease both; cursor: pointer;
+    transition: border-color .2s;
   }
-  .kanban-card:hover { border-color: var(--border2); }
+  .kanban-card:hover { border-color: var(--green); }
   .kanban-company {
-    font-family: var(--font-display);
-    font-size: 15px;
-    margin-bottom: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 600; color: var(--green); margin-bottom: 4px;
   }
-  .kanban-tagline { font-size: 11px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
-  .kanban-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .kanban-tagline { font-size: 12px; color: var(--ink-soft); margin-bottom: 10px; line-height: 1.4; }
+  .kanban-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
   .kanban-meta {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 11px; color: var(--ink-soft);
+    display: flex; align-items: center; gap: 8px;
   }
-  .kanban-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .kanban-dot { width: 7px; height: 7px; border-radius: 50%; }
 
-  .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); }
+  /* ── TABLE VIEW ────────────────────────────────────────────────────── */
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--line); background: var(--white); }
   table { width: 100%; border-collapse: collapse; }
-  thead { background: var(--surface2); }
+  thead { background: var(--paper-2); }
   th {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    padding: 10px 14px;
-    text-align: left;
-    white-space: nowrap;
-    font-weight: 500;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 600;
+    padding: 12px 16px; text-align: left; white-space: nowrap;
   }
   td {
-    padding: 12px 14px;
-    border-top: 1px solid var(--border);
-    font-size: 13px;
-    vertical-align: middle;
+    padding: 14px 16px; border-top: 1px solid var(--line);
+    font-size: 13px; vertical-align: middle;
   }
-  tr:hover td { background: var(--bg); }
-  .td-company { font-family: var(--font-display); font-size: 15px; }
-  .td-location { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  tr:hover td { background: var(--paper); }
+  .td-company { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--green); }
   .td-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 
-  .s-tracking { background: var(--gray-bg); color: var(--gray); }
-  .s-intro { background: var(--purple-bg); color: var(--purple); }
-  .s-meeting { background: var(--blue-bg); color: var(--blue); }
-  .s-diligence { background: var(--amber-bg); color: var(--amber); }
-  .s-term { background: var(--coral-bg); color: var(--coral); }
-  .s-invested { background: var(--green-bg); color: var(--green); }
-  .s-passed { background: #FFF0F0; color: #8B2020; }
+  /* ── STATUS PILL COLORS ────────────────────────────────────────────── */
+  .s-tracking { background: var(--s-tracking-bg); color: var(--s-tracking); }
+  .s-intro { background: var(--s-intro-bg); color: var(--s-intro); }
+  .s-meeting { background: var(--s-meeting-bg); color: var(--s-meeting); }
+  .s-diligence { background: var(--s-diligence-bg); color: var(--s-diligence); }
+  .s-term { background: var(--s-term-bg); color: var(--s-term); }
+  .s-invested { background: var(--s-invested-bg); color: var(--s-invested); }
+  .s-passed { background: var(--s-passed-bg); color: var(--s-passed); }
 
-  .cat-ai-agents { background: var(--purple-bg); color: var(--purple); }
-  .cat-dev-tools { background: var(--blue-bg); color: var(--blue); }
-  .cat-vertical-saas { background: #E2F4EE; color: #1A5E42; }
-  .cat-customer-success { background: var(--green-bg); color: var(--green); }
-  .cat-engineering-ops { background: var(--amber-bg); color: var(--amber); }
-  .cat-product-ops { background: #EEF2FF; color: #3730A3; }
-  .cat-e-commerce { background: var(--coral-bg); color: var(--coral); }
-  .cat-inventory-ops { background: #FFF7ED; color: #9A4F00; }
-  .cat-collab { background: #F3F0FF; color: #5B3DB0; }
-  .cat-default { background: var(--gray-bg); color: var(--gray); }
+  /* ── CATEGORY TAG COLORS ───────────────────────────────────────────── */
+  .cat-ai-agents { background: #eee9fa; color: #3b2f6b; }
+  .cat-dev-tools { background: #deecf8; color: #1a4f7a; }
+  .cat-vertical-saas { background: #def0e6; color: #15543f; }
+  .cat-customer-success { background: #def0e6; color: #15543f; }
+  .cat-engineering-ops { background: var(--paper-2); color: var(--ink-soft); }
+  .cat-product-ops { background: #edebf5; color: #3b2f6b; }
+  .cat-e-commerce { background: #f8e0d4; color: #7a3420; }
+  .cat-inventory-ops { background: #f6ebd4; color: #7a5800; }
+  .cat-default { background: var(--paper-2); color: var(--ink-soft); }
 
+  /* ── EMPTY STATE ───────────────────────────────────────────────────── */
   .empty {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 12px;
+    text-align: center; padding: 5rem 2rem;
+    color: var(--ink-soft); font-size: 14px;
   }
-  .empty-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.3; }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.25; }
 
+  /* ── FOOTER ──────────────────────────────────────────────────────────── */
   footer {
-    max-width: 1100px;
-    margin: 3rem auto 0;
-    padding: 1.5rem 2rem 2.5rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
+    margin-top: 64px;
+    background: var(--green-d);
+    color: #acc2b8;
   }
-  .footer-left {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.8;
+  .foot {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; flex-wrap: wrap; padding: 44px 32px;
+    max-width: var(--max); margin: 0 auto;
   }
-  .footer-links { display: flex; gap: 12px; }
-  .footer-link {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.15s;
-  }
-  .footer-link:hover { color: var(--text); border-color: var(--text); }
+  .foot, .foot a { color: #a9c0b6; font-size: 14px; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--white); }
+  .foot .brand .t1 { color: var(--white); }
+  .foot .brand .t2 { color: var(--gold-soft); }
 
-  @media (max-width: 600px) {
-    header { padding: 2rem 1.25rem 1.5rem; }
-    main { padding: 1.25rem; }
-    .header-right { display: none; }
-    .deals-grid { grid-template-columns: 1fr; }
-    .thesis-bar { padding: 0.75rem 1.25rem; }
-  }
-
+  /* ── MODAL ──────────────────────────────────────────────────────────── */
   .modal-overlay {
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background: rgba(26,24,20,0.6);
     backdrop-filter: blur(4px);
     z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     padding: 1.5rem;
-    animation: fadeInOverlay 0.2s ease;
+    animation: fadeInOverlay .2s ease;
   }
   @keyframes fadeInOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; } to { opacity: 1; }
   }
   .modal {
-    background: var(--surface);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 640px;
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: slideUp 0.25s ease;
-    position: relative;
+    background: var(--white);
+    border-radius: 14px;
+    width: 100%; max-width: 640px;
+    max-height: 90vh; overflow-y: auto;
+    animation: slideUp .25s ease; position: relative;
   }
   @keyframes slideUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -523,223 +410,183 @@
   }
   .modal-header {
     padding: 1.5rem 1.5rem 1rem;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: var(--surface);
-    z-index: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0;
+    background: var(--white); z-index: 1;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
   }
   .modal-company {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--text);
-    margin-bottom: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 600; color: var(--green); margin-bottom: 4px;
   }
-  .modal-tagline {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.55;
-    max-width: 480px;
-  }
+  .modal-tagline { font-size: 13px; color: var(--ink-soft); line-height: 1.55; max-width: 480px; }
   .modal-close {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    border: 1px solid var(--border2);
-    background: transparent;
-    cursor: pointer;
+    width: 34px; height: 34px; border-radius: 4px;
+    border: 1px solid var(--line);
+    background: transparent; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    color: var(--muted);
-    flex-shrink: 0;
-    font-size: 18px;
-    transition: all 0.15s;
+    color: var(--ink-soft); flex-shrink: 0; font-size: 18px;
+    transition: all .15s;
   }
-  .modal-close:hover { background: var(--bg); color: var(--text); }
+  .modal-close:hover { background: var(--paper); color: var(--ink); }
   .modal-body { padding: 1.25rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
   .modal-section-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    margin-bottom: 8px;
-    font-weight: 500;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 10px;
   }
   .modal-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 10px;
   }
   .modal-field {
-    background: var(--bg);
-    border-radius: 8px;
-    padding: 9px 11px;
+    background: var(--paper); border-radius: 6px;
+    padding: 10px 12px; border: 1px solid var(--line);
   }
   .modal-field-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 3px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 500; margin-bottom: 3px;
   }
-  .modal-field-val {
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.5;
-  }
+  .modal-field-val { font-size: 13px; color: var(--ink); line-height: 1.5; }
   .modal-field.full { grid-column: 1 / -1; }
   .modal-desc {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.7;
-    background: var(--bg);
-    border-radius: 8px;
-    padding: 12px 14px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.7;
+    background: var(--paper); border-radius: 6px;
+    padding: 14px; border: 1px solid var(--line);
   }
   .modal-next {
-    background: var(--text);
-    color: #F7F5F0;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    line-height: 1.5;
+    background: var(--green-d); color: #def0e6;
+    border-radius: 6px; padding: 12px 14px; font-size: 13px; line-height: 1.5;
   }
-  .modal-next .modal-field-label { color: rgba(247,245,240,0.5); }
-  .modal-next .modal-field-val { color: #F7F5F0; }
+  .modal-next .modal-field-label { color: var(--gold-soft); }
+  .modal-next .modal-field-val { color: #def0e6; }
   .modal-links { display: flex; gap: 8px; flex-wrap: wrap; }
   .modal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border2);
-    font-size: 12px;
-    font-family: var(--font-mono);
-    color: var(--text);
-    text-decoration: none;
-    transition: all 0.15s;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border-radius: 4px;
+    border: 1px solid var(--line); font-size: 13px; font-weight: 500;
+    color: var(--ink); text-decoration: none; transition: all .15s;
   }
-  .modal-link:hover { background: var(--bg); }
-  .deal-card { cursor: pointer; }
-  .deal-card:hover .company-name { text-decoration: underline; text-underline-offset: 3px; }
-  .kanban-card { cursor: pointer; }
+  .modal-link:hover { border-color: var(--green); color: var(--green); background: #def0e6; }
 
   .gi-box {
-    background: var(--green-bg);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--green);
+    background: #def0e6; border-radius: 6px; padding: 12px 14px;
+    font-size: 13px; line-height: 1.6; color: var(--green);
   }
   .gi-box .gi-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--green);
-    opacity: 0.6;
-    margin-bottom: 4px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green); opacity: 0.6; font-weight: 600; margin-bottom: 6px;
   }
   .gi-box .gi-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
-    padding: 1px 0;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
   }
+  .gi-box .gi-row + .gi-row { margin-top: 4px; }
   .gi-box .gi-row .gi-key { opacity: 0.7; }
+
   .why-box {
-    background: var(--purple-bg);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--purple);
+    background: #eee9fa; border-radius: 6px; padding: 12px 14px;
+    font-size: 13px; line-height: 1.6; color: #3b2f6b;
   }
   .why-box .why-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--purple);
-    opacity: 0.6;
-    margin-bottom: 2px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #3b2f6b; opacity: 0.6; font-weight: 600; margin-bottom: 4px;
   }
+
   .metrics-box {
-    background: var(--bg);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--muted);
+    background: var(--paper); border-radius: 6px; padding: 12px 14px;
+    font-size: 13px; line-height: 1.6; color: var(--ink-soft);
+    border: 1px solid var(--line);
   }
   .metrics-box .metrics-label {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 4px;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 600; margin-bottom: 6px;
   }
-  .metrics-box .metrics-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-  }
+  .metrics-box .metrics-row { display: flex; flex-wrap: wrap; gap: 6px 12px; }
   .metrics-box .metrics-row .m-item {
-    background: var(--surface);
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-family: var(--font-mono);
-    font-size: 10px;
+    background: var(--white); border-radius: 4px;
+    padding: 3px 8px; font-size: 11px;
   }
-  .metrics-box .metrics-row .m-item .m-key { color: var(--muted); }
-  .metrics-box .metrics-row .m-item .m-val { color: var(--text); }
+  .metrics-box .metrics-row .m-item .m-key { color: var(--ink-soft); }
+  .metrics-box .metrics-row .m-item .m-val { color: var(--ink); font-weight: 500; }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .deals-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 22px; }
+    .nav { padding: 0 22px; }
+    .pipeline-hero { padding: 64px 0 50px; }
+    .pipeline-hero h1 { font-size: 32px; }
+    .stats-bar { gap: 28px; padding-top: 20px; margin-top: 40px; }
+    .deals-grid { grid-template-columns: 1fr; }
+    .controls { flex-direction: column; align-items: stretch; }
+    .filter-group { justify-content: center; }
+    .view-toggle { align-self: center; }
+    .header-credit { display: none; }
+    .foot { flex-direction: column; text-align: center; gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="header-right" id="lastUpdated"></div>
-    <p class="header-eyebrow">Built for Mohammed Al-Abdullah · Founder & GP, Matador Ventures Capital</p>
-    <h1>Matador Ventures Capital<br><em>Deal Pipeline</em></h1>
-    <p class="header-desc">Autonomous deal sourcing pipeline scanning for pre-seed & seed AI-native companies — surfacing category-defining founders building with LLMs as core product.</p>
-    <div class="header-stats" id="headerStats"></div>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <img class="logo-mark" src="https://matador-vc.com/logo-mark.png" alt="Matador Ventures Capital" />
+      <span class="word">
+        <span class="t1">MATADOR</span>
+        <span class="t2">Ventures Capital</span>
+      </span>
+    </a>
+    <div class="header-credit">
+      Curated for <a href="https://matador-vc.com" target="_blank" rel="noopener">Mohammed Al-Abdullah</a>, Founder &amp; GP
+    </div>
   </div>
 </header>
 
+<section class="pipeline-hero">
+  <div class="wrap">
+    <p class="eyebrow">Matador Ventures Capital · Deal Pipeline</p>
+    <h1>Early-stage AI companies <em>sourced for Matador</em></h1>
+    <p class="lede">Autonomous deal sourcing pipeline scanning for pre-seed and seed AI-native companies aligned with Matador Ventures Capital's investment thesis — founder-first, built to scale, US tech hubs.</p>
+    <div class="stats-bar" id="headerStats"></div>
+  </div>
+</section>
+
 <div class="thesis-bar">
-  <strong>Investment Thesis</strong>
-  <span class="thesis-tag">Pre-seed / Seed</span>
-  <span class="thesis-tag">AI-native SaaS</span>
-  <span class="thesis-tag">Vertical AI Agents</span>
-  <span class="thesis-tag">SF / NYC / Austin / LA / Seattle</span>
-  <span class="thesis-tag">Team &lt; 20</span>
+  <div class="wrap">
+    <strong>Sourcing Thesis</strong>
+    <span class="thesis-tag">Pre-seed / Seed</span>
+    <span class="thesis-tag">AI-native SaaS</span>
+    <span class="thesis-tag">Vertical AI Agents</span>
+    <span class="thesis-tag">AI Infrastructure</span>
+    <span class="thesis-tag">US Tech Hubs</span>
+  </div>
 </div>
 
-<main>
+<main class="wrap">
+
   <div class="controls">
     <div class="search-wrap">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10.5 10.5l3 3"/></svg>
       <input type="search" id="searchInput" placeholder="Search companies, founders, categories…">
     </div>
-
     <div class="filter-group" id="statusFilters"></div>
     <div class="filter-group" id="convictionFilters"></div>
-
     <div class="view-toggle">
       <button class="view-btn active" id="btnGrid" onclick="setView('grid')" title="Grid">
         <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
         Grid
       </button>
-      <button class="view-btn" id="btnKanban" onclick="setView('kanban')" title="Kanban">
+      <button class="view-btn" id="btnKanban" onclick="setView('kanban')" title="Board">
         <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="4" height="14" rx="1"/><rect x="6" y="1" width="4" height="10" rx="1"/><rect x="11" y="1" width="4" height="12" rx="1"/></svg>
         Board
       </button>
@@ -756,17 +603,24 @@
   </div>
 
   <div id="viewContainer"></div>
+
 </main>
 
 <footer>
-  <div class="footer-left">
-    Built by Ahsan Habib for <strong>Matador Ventures Capital</strong> (Mohammed Al-Abdullah, Founder & GP)<br>
-    Sourcing AI-native pre-seed & seed deals · US tech hub ecosystem focus
-  </div>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/mohammed-al-abdullah-151685218/" class="footer-link" target="_blank">Mohammed Al-Abdullah</a>
-    <a href="https://www.linkedin.com/in/ahsan-habib-imrose-1b8724110" class="footer-link" target="_blank">Ahsan Habib</a>
-    <a href="https://github.com/heyahsann" class="footer-link" target="_blank">GitHub</a>
+  <div class="foot">
+    <a class="brand" href="#top">
+      <img class="logo-mark" src="https://matador-vc.com/logo-mark-light.png" alt="Matador Ventures Capital" />
+      <span class="word">
+        <span class="t1">MATADOR</span>
+        <span class="t2">Ventures Capital</span>
+      </span>
+    </a>
+    <div>
+      Built by <a href="https://heyahsann.github.io/heyahsan/" target="_blank">Ahsan Habib</a>
+      &nbsp;·&nbsp; <a href="https://matador-vc.com" target="_blank" rel="noopener">matador-vc.com</a>
+      &nbsp;·&nbsp; <a href="https://linkedin.com/in/matador-ventures-capital-a82390367/" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp; &copy; 2026 Matador Ventures Capital, LLC
+    </div>
   </div>
 </footer>
 
@@ -792,24 +646,14 @@ let searchQuery = '';
 
 const STATUSES = ['Tracking','Intro Made','First Meeting','Diligence','Term Sheet','Invested','Passed'];
 const STATUS_CLASS = {
-  'Tracking': 's-tracking',
-  'Intro Made': 's-intro',
-  'First Meeting': 's-meeting',
-  'Diligence': 's-diligence',
-  'Term Sheet': 's-term',
-  'Invested': 's-invested',
-  'Passed': 's-passed'
+  'Tracking': 's-tracking','Intro Made': 's-intro','First Meeting': 's-meeting',
+  'Diligence': 's-diligence','Term Sheet': 's-term','Invested': 's-invested','Passed': 's-passed'
 };
 const CAT_CLASS = {
-  'AI Agents': 'cat-ai-agents',
-  'Dev Tools': 'cat-dev-tools',
-  'Vertical SaaS': 'cat-vertical-saas',
-  'Customer Success': 'cat-customer-success',
-  'Engineering Ops': 'cat-engineering-ops',
-  'Product Ops': 'cat-product-ops',
-  'E-commerce': 'cat-e-commerce',
-  'Inventory Ops': 'cat-inventory-ops',
-  'Collab Infrastructure': 'cat-collab'
+  'AI Agents': 'cat-ai-agents','Dev Tools': 'cat-dev-tools','Vertical SaaS': 'cat-vertical-saas',
+  'Customer Success': 'cat-customer-success','Engineering Ops': 'cat-engineering-ops',
+  'Product Ops': 'cat-product-ops','E-commerce': 'cat-e-commerce',
+  'Inventory Ops': 'cat-inventory-ops','Collab Infrastructure': 'cat-collab'
 };
 
 function esc(s) { return String(s || '').replace(/[&<>"']/g, function(m) {
@@ -853,9 +697,8 @@ function openModal(id) {
   }
 
   document.getElementById('modalBody').innerHTML = `
-    ${d.description ? `<div class="modal-desc">${esc(d.description)}</div>` : ''}
-
-    <div class="modal-section">
+    ${d.description ? '<div class="modal-desc">' + esc(d.description) + '</div>' : ''}
+    <div>
       <div class="modal-section-label">Deal details</div>
       <div class="modal-grid">
         <div class="modal-field"><div class="modal-field-label">Stage</div><div class="modal-field-val">${esc(d.stage)}</div></div>
@@ -863,32 +706,25 @@ function openModal(id) {
         <div class="modal-field"><div class="modal-field-label">Conviction</div><div class="modal-field-val">${esc(d.conviction)}</div></div>
         <div class="modal-field"><div class="modal-field-label">Location</div><div class="modal-field-val">${esc(d.location) || '—'}</div></div>
         <div class="modal-field full"><div class="modal-field-label">Founder(s)</div><div class="modal-field-val">${founders}</div></div>
-        ${d.accelerator ? `<div class="modal-field"><div class="modal-field-label">Accelerator</div><div class="modal-field-val">${esc(d.accelerator)}</div></div>` : ''}
+        ${d.accelerator ? '<div class="modal-field"><div class="modal-field-label">Accelerator</div><div class="modal-field-val">' + esc(d.accelerator) + '</div></div>' : ''}
         <div class="modal-field"><div class="modal-field-label">Source</div><div class="modal-field-val">${esc(d.source)}</div></div>
         <div class="modal-field"><div class="modal-field-label">First contact</div><div class="modal-field-val">${esc(d.firstContact) || '—'}</div></div>
       </div>
     </div>
-
     ${generalInfoHtml}
-
     ${metricsHtml}
-
     ${whyHtml}
-
-    ${d.nextAction || d.currentStatus ? `
-    <div class="modal-next">
-      ${d.currentStatus ? `<div class="modal-field-label">Current status</div><div class="modal-field-val" style="margin-bottom:${d.nextAction?'10px':'0'}">${esc(d.currentStatus)}</div>` : ''}
-      ${d.nextAction ? `<div class="modal-field-label">Next action</div><div class="modal-field-val">→ ${esc(d.nextAction)}</div>` : ''}
-    </div>` : ''}
-
-    ${d.watchouts ? `<div class="modal-desc" style="background:var(--coral-bg);color:var(--coral);margin-top:0">${esc(d.watchouts)}</div>` : ''}
-
+    ${d.nextAction || d.currentStatus ? '<div class="modal-next">' +
+      (d.currentStatus ? '<div class="modal-field-label">Current status</div><div class="modal-field-val"' + (d.nextAction ? ' style="margin-bottom:10px"' : '') + '>' + esc(d.currentStatus) + '</div>' : '') +
+      (d.nextAction ? '<div class="modal-field-label">Next action</div><div class="modal-field-val">→ ' + esc(d.nextAction) + '</div>' : '') +
+    '</div>' : ''}
+    ${d.watchouts ? '<div class="modal-desc" style="background:#f8e0d4;color:#7a3420;border-color:#f0c8b8">' + esc(d.watchouts) + '</div>' : ''}
     <div>
-      <div class="modal-section-label" style="margin-bottom:6px">Links</div>
+      <div class="modal-section-label" style="margin-bottom:8px">Links</div>
       <div class="modal-links">
-        ${d.website ? `<a href="${esc(d.website)}" target="_blank" class="modal-link">${globeIcon} Website</a>` : ''}
-        ${d.linkedin ? `<a href="${esc(d.linkedin)}" target="_blank" class="modal-link">${liIcon} LinkedIn</a>` : ''}
-        ${d.email ? `<a href="mailto:${esc(d.email)}" class="modal-link">${mailIcon} ${esc(d.email)}</a>` : ''}
+        ${d.website ? '<a href="' + esc(d.website) + '" target="_blank" class="modal-link">' + globeIcon + ' Website</a>' : ''}
+        ${d.linkedin ? '<a href="' + esc(d.linkedin) + '" target="_blank" class="modal-link">' + liIcon + ' LinkedIn</a>' : ''}
+        ${d.email ? '<a href="mailto:' + esc(d.email) + '" class="modal-link">' + mailIcon + ' ' + esc(d.email) + '</a>' : ''}
       </div>
     </div>
   `;
@@ -900,12 +736,10 @@ function openModal(id) {
 function closeModal(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
 }
-
 function closeModalDirect() {
   document.getElementById('modalOverlay').style.display = 'none';
   document.body.style.overflow = '';
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 
 async function init() {
@@ -925,27 +759,24 @@ function renderStats() {
   const stats = [
     { num: deals.length, label: 'Companies tracked' },
     { num: deals.filter(d => d.conviction === 'High').length, label: 'High conviction' },
-    { num: [...new Set(deals.flatMap(d => d.category))].length, label: 'Categories' },
+    { num: [...new Set(deals.flatMap(d => d.category))].length, label: 'Sectors' },
     { num: deals.filter(d => d.status === 'Invested').length, label: 'Invested' }
   ];
-  document.getElementById('headerStats').innerHTML = stats.map(s => `
-    <div class="stat">
-      <div class="stat-num">${s.num}</div>
-      <div class="stat-label">${s.label}</div>
-    </div>
-  `).join('');
+  document.getElementById('headerStats').innerHTML = stats.map(s =>
+    '<div class="stat-item"><div class="stat-num">' + s.num + '</div><div class="stat-label">' + s.label + '</div></div>'
+  ).join('');
 }
 
 function renderFilters() {
   const statuses = ['all', ...STATUSES.filter(s => deals.some(d => d.status === s))];
-  document.getElementById('statusFilters').innerHTML = statuses.map(s => `
-    <button class="filter-btn ${activeStatus === s ? 'active' : ''}" onclick="setStatus('${s}')">${s === 'all' ? 'All stages' : s}</button>
-  `).join('');
+  document.getElementById('statusFilters').innerHTML = statuses.map(s =>
+    '<button class="filter-btn' + (activeStatus === s ? ' active' : '') + '" onclick="setStatus(\'' + s + '\')">' + (s === 'all' ? 'All stages' : s) + '</button>'
+  ).join('');
 
   const convictions = ['all','High','Medium','Watch'];
-  document.getElementById('convictionFilters').innerHTML = convictions.map(c => `
-    <button class="filter-btn ${activeConviction === c ? 'active' : ''}" onclick="setConviction('${c}')">${c === 'all' ? 'All conviction' : c}</button>
-  `).join('');
+  document.getElementById('convictionFilters').innerHTML = convictions.map(c =>
+    '<button class="filter-btn' + (activeConviction === c ? ' active' : '') + '" onclick="setConviction(\'' + c + '\')">' + (c === 'all' ? 'All conviction' : c) + '</button>'
+  ).join('');
 }
 
 function filtered() {
@@ -962,128 +793,99 @@ function filtered() {
   });
 }
 
-function tagEl(cat) {
-  const cls = CAT_CLASS[cat] || 'cat-default';
-  return `<span class="tag ${cls}">${cat}</span>`;
-}
-
-function statusEl(status) {
-  return `<span class="status-pill ${STATUS_CLASS[status] || 's-tracking'}">${status}</span>`;
-}
+function tagEl(cat) { return '<span class="tag ' + (CAT_CLASS[cat] || 'cat-default') + '">' + cat + '</span>'; }
+function statusEl(status) { return '<span class="status-pill ' + (STATUS_CLASS[status] || 's-tracking') + '">' + status + '</span>'; }
 
 function convDot(conviction) {
   const cls = conviction === 'High' ? 'dot-high' : conviction === 'Medium' ? 'dot-medium' : 'dot-watch';
-  return `<div class="conviction-dot ${cls}" title="${conviction} conviction"></div>`;
+  return '<div class="conviction-dot ' + cls + '" title="' + conviction + ' conviction"></div>';
 }
 
 function linkIcon(url, icon) {
   if (!url) return '';
-  return `<a href="${url}" target="_blank" rel="noopener" class="card-link" title="Visit">${icon}</a>`;
+  return '<a href="' + esc(url) + '" target="_blank" rel="noopener" class="card-link" title="Visit">' + icon + '</a>';
 }
 
-const globeIcon = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5C8 1.5 5.5 4 5.5 8s2.5 6.5 2.5 6.5M8 1.5C8 1.5 10.5 4 10.5 8S8 14.5 8 14.5M1.5 8h13"/></svg>`;
-const liIcon = `<svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-1 4.5h2V14h-2V6.5zm4 0h2v1h.03c.28-.53 1-1.09 2.07-1.09 2.2 0 2.6 1.45 2.6 3.34V14h-2v-3.75c0-.89-.02-2.04-1.24-2.04-1.25 0-1.44.97-1.44 1.97V14h-2V6.5z"/></svg>`;
-const mailIcon = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg>`;
+const globeIcon = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5C8 1.5 5.5 4 5.5 8s2.5 6.5 2.5 6.5M8 1.5C8 1.5 10.5 4 10.5 8S8 14.5 8 14.5M1.5 8h13"/></svg>';
+const liIcon = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-1 4.5h2V14h-2V6.5zm4 0h2v1h.03c.28-.53 1-1.09 2.07-1.09 2.2 0 2.6 1.45 2.6 3.34V14h-2v-3.75c0-.89-.02-2.04-1.24-2.04-1.25 0-1.44.97-1.44 1.97V14h-2V6.5z"/></svg>';
+const mailIcon = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M1.5 5l6.5 4.5L14.5 5"/></svg>';
 
 function renderGrid(list) {
   if (!list.length) return emptyState();
-  return `<div class="deals-grid">${list.map((d,i) => `
-    <div class="deal-card" style="animation-delay:${i*0.04}s" onclick="openModal('${d.id}')" title="Click to view details">
-      <div class="card-top">
-        <div class="company-name">${esc(d.company)}</div>
-        ${convDot(d.conviction)}
-      </div>
-      <p class="tagline">${esc(d.tagline)}</p>
-      <div class="card-tags">${d.category.map(tagEl).join('')}</div>
-      ${d.metrics && d.metrics.traction ? `<div class="traction-box">${esc(d.metrics.traction)}</div>` : ''}
-      <div class="card-meta">
-        <div class="meta-item">
-          <div class="meta-label">Stage</div>
-          <div class="meta-val">${esc(d.stage)}</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Location</div>
-          <div class="meta-val">${esc(d.location) || '—'}</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Founder(s)</div>
-          <div class="meta-val">${d.founders.map(f=>esc(f.name)).join(', ')}</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Source</div>
-          <div class="meta-val">${esc(d.source)}</div>
-        </div>
-      </div>
-      <div class="card-footer">
-        ${statusEl(d.status)}
-        <div class="card-links">
-          ${linkIcon(d.website, globeIcon)}
-          ${linkIcon(d.linkedin, liIcon)}
-          ${d.email ? `<a href="mailto:${d.email}" class="card-link" title="Email">${mailIcon}</a>` : ''}
-        </div>
-      </div>
-    </div>
-  `).join('')}</div>`;
+  return '<div class="deals-grid">' + list.map((d,i) =>
+    '<div class="deal-card" style="animation-delay:' + (i*0.04) + 's" onclick="openModal(\'' + d.id + '\')" title="Click to view details">' +
+      '<div class="card-top"><div class="company-name">' + esc(d.company) + '</div>' + convDot(d.conviction) + '</div>' +
+      '<p class="tagline">' + esc(d.tagline) + '</p>' +
+      '<div class="card-tags">' + d.category.map(tagEl).join('') + '</div>' +
+      (d.metrics && d.metrics.traction ? '<div class="traction-box">' + esc(d.metrics.traction) + '</div>' : '') +
+      '<div class="card-meta">' +
+        '<div><div class="meta-label">Stage</div><div class="meta-val">' + esc(d.stage) + '</div></div>' +
+        '<div><div class="meta-label">Location</div><div class="meta-val">' + (esc(d.location) || '—') + '</div></div>' +
+        '<div><div class="meta-label">Founder(s)</div><div class="meta-val">' + d.founders.map(f=>esc(f.name)).join(', ') + '</div></div>' +
+        '<div><div class="meta-label">Source</div><div class="meta-val">' + esc(d.source) + '</div></div>' +
+      '</div>' +
+      '<div class="card-footer">' +
+        statusEl(d.status) +
+        '<div class="card-links">' +
+          linkIcon(d.website, globeIcon) +
+          linkIcon(d.linkedin, liIcon) +
+          (d.email ? '<a href="mailto:' + esc(d.email) + '" class="card-link" title="Email">' + mailIcon + '</a>' : '') +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  ).join('') + '</div>';
 }
 
 function renderKanban(list) {
   const cols = STATUSES.filter(s => deals.some(d => d.status === s));
   if (!cols.length) return emptyState();
-  return `<div class="kanban-board">${cols.map(col => {
+  return '<div class="kanban-board">' + cols.map(col => {
     const cards = list.filter(d => d.status === col);
-    return `<div class="kanban-col">
-      <div class="kanban-header">
-        <span class="kanban-label">${col}</span>
-        <span class="kanban-count">${cards.length}</span>
-      </div>
-      <div class="kanban-cards">
-        ${cards.length ? cards.map((d,i) => `
-          <div class="kanban-card" style="animation-delay:${i*0.05}s" onclick="openModal('${d.id}')" title="Click to view details">
-            <div class="kanban-company">${esc(d.company)}</div>
-            <div class="kanban-tagline">${esc(d.tagline)}</div>
-            <div class="kanban-tags">${d.category.slice(0,2).map(tagEl).join('')}</div>
-            <div class="kanban-meta">
-              <div class="kanban-dot ${d.conviction==='High'?'dot-high':d.conviction==='Medium'?'dot-medium':'dot-watch'}"></div>
-              ${esc(d.conviction)} · ${esc(d.stage)}
-            </div>
-          </div>
-        `).join('') : `<div style="padding:1rem;font-size:11px;color:var(--muted);text-align:center;font-family:var(--font-mono)">empty</div>`}
-      </div>
-    </div>`;
-  }).join('')}</div>`;
+    return '<div class="kanban-col">' +
+      '<div class="kanban-header"><span class="kanban-label">' + col + '</span><span class="kanban-count">' + cards.length + '</span></div>' +
+      '<div class="kanban-cards">' +
+        (cards.length ? cards.map((d,i) =>
+          '<div class="kanban-card" style="animation-delay:' + (i*0.05) + 's" onclick="openModal(\'' + d.id + '\')" title="Click to view details">' +
+            '<div class="kanban-company">' + esc(d.company) + '</div>' +
+            '<div class="kanban-tagline">' + esc(d.tagline) + '</div>' +
+            '<div class="kanban-tags">' + d.category.slice(0,2).map(tagEl).join('') + '</div>' +
+            '<div class="kanban-meta">' +
+              '<div class="kanban-dot ' + (d.conviction==='High'?'dot-high':d.conviction==='Medium'?'dot-medium':'dot-watch') + '"></div>' +
+              esc(d.conviction) + ' · ' + esc(d.stage) +
+            '</div>' +
+          '</div>'
+        ).join('') : '<div style="padding:1rem;font-size:12px;color:var(--ink-soft);text-align:center">empty</div>') +
+      '</div></div>';
+  }).join('') + '</div>';
 }
 
 function renderTable(list) {
   if (!list.length) return emptyState();
-  return `<div class="table-wrap"><table>
-    <thead><tr>
-      <th>Company</th><th>Stage</th><th>Status</th><th>Conviction</th>
-      <th>Category</th><th>Location</th><th>Founder(s)</th><th>Links</th>
-    </tr></thead>
-    <tbody>${list.map(d => `<tr onclick="openModal('${d.id}')" style="cursor:pointer" title="Click to view details">
-      <td class="td-company">${esc(d.company)}<br><span style="font-size:11px;color:var(--muted);font-family:var(--font-body);font-weight:400">${esc(d.tagline.substring(0,48))}…</span></td>
-      <td style="font-size:12px;font-family:var(--font-mono);color:var(--muted)">${esc(d.stage)}</td>
-      <td>${statusEl(d.status)}</td>
-      <td><span class="tag ${d.conviction==='High'?'cat-customer-success':d.conviction==='Medium'?'cat-engineering-ops':'cat-default'}">${esc(d.conviction)}</span></td>
-      <td class="td-tags">${d.category.slice(0,2).map(tagEl).join('')}</td>
-      <td class="td-location">${esc(d.location)||'—'}</td>
-      <td style="font-size:12px">${d.founders.map(f=>esc(f.name)).join(', ')}</td>
-      <td><div style="display:flex;gap:5px">
-        ${linkIcon(d.website, globeIcon)}
-        ${linkIcon(d.linkedin, liIcon)}
-        ${d.email ? `<a href="mailto:${d.email}" class="card-link">${mailIcon}</a>` : ''}
-      </div></td>
-    </tr>`).join('')}</tbody>
-  </table></div>`;
+  return '<div class="table-wrap"><table><thead><tr>' +
+    '<th>Company</th><th>Stage</th><th>Status</th><th>Conviction</th><th>Category</th><th>Location</th><th>Founder(s)</th><th>Links</th>' +
+    '</tr></thead><tbody>' + list.map(d =>
+    '<tr onclick="openModal(\'' + d.id + '\')" style="cursor:pointer" title="Click to view details">' +
+      '<td class="td-company">' + esc(d.company) + '<br><span style="font-size:11px;color:var(--ink-soft);font-weight:400">' + esc(d.tagline.substring(0,48)) + '…</span></td>' +
+      '<td style="font-size:12px;color:var(--ink-soft)">' + esc(d.stage) + '</td>' +
+      '<td>' + statusEl(d.status) + '</td>' +
+      '<td><span class="tag ' + (d.conviction==='High'?'cat-vertical-saas':d.conviction==='Medium'?'cat-engineering-ops':'cat-default') + '">' + esc(d.conviction) + '</span></td>' +
+      '<td class="td-tags">' + d.category.slice(0,2).map(tagEl).join('') + '</td>' +
+      '<td>' + (esc(d.location)||'—') + '</td>' +
+      '<td style="font-size:12px">' + d.founders.map(f=>esc(f.name)).join(', ') + '</td>' +
+      '<td><div style="display:flex;gap:5px">' +
+        linkIcon(d.website, globeIcon) +
+        linkIcon(d.linkedin, liIcon) +
+        (d.email ? '<a href="mailto:' + esc(d.email) + '" class="card-link">' + mailIcon + '</a>' : '') +
+      '</div></td>' +
+    '</tr>'
+  ).join('') + '</tbody></table></div>';
 }
 
-function emptyState() {
-  return `<div class="empty"><div class="empty-icon">○</div>No deals match your filters.</div>`;
-}
+function emptyState() { return '<div class="empty"><div class="empty-icon">&#9675;</div>No deals match your filters.</div>'; }
 
 function render() {
   const list = filtered();
-  document.getElementById('resultsCount').textContent = `${list.length} of ${deals.length} companies`;
+  document.getElementById('resultsCount').textContent = list.length + ' of ' + deals.length + ' companies';
   const container = document.getElementById('viewContainer');
   if (currentView === 'grid') container.innerHTML = renderGrid(list);
   else if (currentView === 'kanban') container.innerHTML = renderKanban(list);
@@ -1092,32 +894,21 @@ function render() {
 
 function setView(v) {
   currentView = v;
-  ['grid','kanban','table'].forEach(x => {
-    document.getElementById(`btn${x.charAt(0).toUpperCase()+x.slice(1)}`).classList.toggle('active', x===v);
+  ['grid','kanban','table'].forEach(function(x) {
+    document.getElementById('btn' + x.charAt(0).toUpperCase() + x.slice(1)).classList.toggle('active', x === v);
   });
   render();
 }
-
-function setStatus(s) {
-  activeStatus = s;
-  renderFilters();
-  render();
-}
-
-function setConviction(c) {
-  activeConviction = c;
-  renderFilters();
-  render();
-}
+function setStatus(s) { activeStatus = s; renderFilters(); render(); }
+function setConviction(c) { activeConviction = c; renderFilters(); render(); }
 
 function updateTimestamp() {
   const now = new Date();
   const str = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  document.getElementById('lastUpdated').innerHTML = `Last updated<br>${str}`;
-  document.getElementById('lastUpdatedSmall').textContent = `Updated ${str}`;
+  document.getElementById('lastUpdatedSmall').textContent = 'Updated ' + str;
 }
 
-document.getElementById('searchInput').addEventListener('input', e => {
+document.getElementById('searchInput').addEventListener('input', function(e) {
   searchQuery = e.target.value;
   render();
 });
