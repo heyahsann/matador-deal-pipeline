@@ -1,18 +1,38 @@
 [
   {
-    "founder_name": "James Kujareevanich",
+    "id": "linewise",
     "company": "LineWise",
-    "score": 9,
-    "raw_signal": "LineWise (YC X25) Raises $1.1M Pre-Seed Funding to End Costly Factory Downtime and Yield Loss. LineWise, the US-based AI-powered virtual engineer for manufacturers, has raised $1.1 million in pre-seed funding from A2D Ventures, Y Combinator, Exitfund, REMUS Capital, SBXi Fund, and Team Ignite Ventures.",
-    "location": "US-based (YC batch)",
-    "region": "US",
-    "sectors": [
+    "tagline": "LineWise (YC X25) Raises $1",
+    "conviction": "High",
+    "category": [
       "AI Agents"
     ],
-    "linkedin_url": "",
-    "company_website": "",
-    "crunchbase_url": "",
-    "pitchbook_url": "",
-    "background_summary": ""
+    "stage": "Pre-Seed",
+    "location": "US-based (YC batch)",
+    "region": "US",
+    "founders": [
+      {
+        "name": "James Kujareevanich",
+        "role": "Co-Founder & CEO"
+      }
+    ],
+    "source": "Pipeline",
+    "status": "Tracking",
+    "score": 9,
+    "metrics": {},
+    "website": "",
+    "linkedin": "",
+    "crunchbase": "",
+    "email": "",
+    "description": "LineWise (YC X25) Raises $1.1M Pre-Seed Funding to End Costly Factory Downtime and Yield Loss. LineWise, the US-based AI-powered virtual engineer for manufacturers, has raised $1.1 million in pre-seed funding from A2D Ventures, Y Combinator, Exitfund, REMUS Capital, SBXi Fund, and Team Ignite Ventures.",
+    "generalInfo": {},
+    "whyInvest": "",
+    "raw_signal": "LineWise (YC X25) Raises $1.1M Pre-Seed Funding to End Costly Factory Downtime and Yield Loss. LineWise, the US-based AI-powered virtual engineer for manufacturers, has raised $1.1 million in pre-seed funding from A2D Ventures, Y Combinator, Exitfund, REMUS Capital, SBXi Fund, and Team Ignite Ventures.",
+    "background_summary": "",
+    "watchouts": "",
+    "nextAction": "",
+    "currentStatus": "",
+    "accelerator": "",
+    "firstContact": ""
   }
 ]
