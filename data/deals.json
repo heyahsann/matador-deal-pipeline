@@ -2,7 +2,7 @@
   {
     "id": "linewise",
     "company": "LineWise",
-    "tagline": "LineWise (YC X25) Raises $1",
+    "tagline": "LineWise uses AI to capture expert knowledge and guide factory workers through real-time troubleshooting and training.",
     "conviction": "High",
     "category": [
       "AI Agents"
@@ -35,7 +35,7 @@
       "previousInvestors": [],
       "raiseDetails": "Y Combinator\n\nHome"
     },
-    "whyInvest": "• 6-month payback period and 23 hrs saved/user/month show strong traction • Team combines MIT/Imperial engineering, McKinsey ops, and deep manufacturing expertise • Addresses critical frontline skills gap with AI that captures tribal knowledge",
+    "whyInvest": "• 6-month payback period and 23 hrs saved/user/month show strong traction • Team includes MIT/Imperial grads, McKinsey consultant, and serial AI entrepreneur • Addresses critical manufacturing skills gap with AI that captures tribal knowledge",
     "raw_signal": "LineWise (YC X25) Raises $1.1M Pre-Seed Funding to End Costly Factory Downtime and Yield Loss. LineWise, the US-based AI-powered virtual engineer for manufacturers, has raised $1.1 million in pre-seed funding from A2D Ventures, Y Combinator, Exitfund, REMUS Capital, SBXi Fund, and Team Ignite Ventures.",
     "background_summary": "",
     "watchouts": "",
